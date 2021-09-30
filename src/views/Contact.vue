@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
-    <p>This is an about page</p>
+      Contact Form...
   </div>
 </template>
 
 <script>
 export default {
-  name: 'About'
+  name: 'Contact'
 }
 </script>

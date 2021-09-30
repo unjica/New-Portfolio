@@ -1,30 +1,49 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Nav />
+  <router-view class="min-height"/>
+  <Footer />
 </template>
 
+<script>
+import Nav from './components/Nav'
+import Footer from './components/Footer'
+
+export default {
+  name: 'App',
+  components: {
+    Nav,
+    Footer
+  }
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import './styles/_variables.scss';
+
+@font-face {
+  font-family: Luxia;
+  src: url("./fonts/Luxia-Regular.otf");
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app {
+  font-family: Luxia, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  color: $dark-color;
+  background-color: $light-color;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1536px;
+  margin: auto;
+}
+.min-height {
+  min-height: 100vh;
 }
 </style>
