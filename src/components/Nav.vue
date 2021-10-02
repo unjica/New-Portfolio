@@ -2,11 +2,12 @@
   <div class="container">
     <div class="wrapper">
       <div class="flex">
-        <div>UNJICA</div>
-        <div class="menu">
-          <router-link class="router-link" to="/">Home</router-link>
-          <router-link class="router-link" to="/About">About</router-link>
-          <router-link class="router-link" to="/Contact">Contact</router-link>
+        <router-link class="logo" to="/">UNJICA</router-link>
+        <div class="flex">
+          <router-link class="nav-item" to="/">{{ $t('menu.home') }}</router-link>
+          <router-link class="nav-item" to="/About">{{ $t('menu.about') }}</router-link>
+          <router-link class="nav-item" to="/Contact">{{ $t('menu.contact') }}</router-link>
+          <locale-switcher class="nav-item" />
         </div>
       </div>
     </div>
@@ -14,8 +15,13 @@
 </template>
 
 <script>
+import LocaleSwitcher from './LocaleSwitcher'
+
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  components: {
+    LocaleSwitcher
+  }
 }
 </script>
 
@@ -32,13 +38,14 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.router-link {
+.nav-item {
   color: $lilac-color;
   text-decoration: none;
   padding: 10px;
 }
-.active {
-  color: $dark-color;
+.logo {
   text-decoration: none;
+  color: $lilac-color;
+  font-size: 35px;
 }
 </style>

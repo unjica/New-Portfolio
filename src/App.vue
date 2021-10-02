@@ -46,4 +46,7 @@ export default {
 .min-height {
   min-height: 100vh;
 }
+.pointer {
+  cursor: pointer;
+}
 </style>
